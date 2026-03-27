@@ -94,7 +94,7 @@ The agent interacts with external tools to extend its capabilities:
 ## 4. Agentic Workflow
 
 <p align="center">
-  <img src="./asset/Workflow.png" width="700"/>
+  <img src="./assert/Workflow.png" width="700"/>
 </p>
 
 **Workflow Explanation:**
@@ -112,21 +112,20 @@ The agent interacts with external tools to extend its capabilities:
 
 ### Input:
 
-"My car makes a strange noise when braking"
+"Tôi cần 1 chiếc xe 5 chỗ ngồi, động cơ xăng, tầm giá dưới 1 tỷ."
 
 ### Agent Behavior:
 
-1. Detect intent: mechanical issue
+1. Detect intent: Ask recommendation
 2. Plan actions:
 
-   * Retrieve knowledge from database
-   * Call diagnostic tool
+   * List all customer's demands about the car
+   * Retrieve most suitable cars from database
 3. Combine results
 4. Return:
 
-   * Possible causes
-   * Risk level
-   * Repair recommendations
+   * List all the suitable cars
+   * List cars's demanded information
 
 ---
 
