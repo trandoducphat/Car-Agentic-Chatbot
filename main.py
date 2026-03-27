@@ -19,7 +19,7 @@ def main():
     product_store = VectorStore("product")
 
     if policy_store.collection.count() == 0 or product_store.collection.count() == 0:
-        raise RuntimeError("Vector store is empty. Run load_all_collections() to load")
+        load_all_collections()
     
     policy_retriever = RAGRetriever(policy_store, embedding_manager)
     product_retriever = RAGRetriever(product_store, embedding_manager)
@@ -101,10 +101,10 @@ def test7():
 
 if __name__ == "__main__":
     main()
-    # test0()
+    test0()
     # test1()
     # test2()
     # test3()
     # test4()
-    test5()
+    # test5()
     # test6()

@@ -58,30 +58,9 @@ The agent interacts with external tools to extend its capabilities:
 ## 4. Agentic Workflow
 
 ```
-User Query
-   |
-   v
-[Step 1] Intent Detection
-   |
-   v
-[Step 2] Planning
-   |
-   +--> Need knowledge? --> RAG
-   |
-   +--> Need real-time data? --> API
-   |
-   +--> Need analysis? --> Tool
-   |
-   v
-[Step 3] Tool Execution
-   |
-   v
-[Step 4] Result Aggregation
-   |
-   v
-[Step 5] Final Response
-```
-
+<p align="center">
+  <img src="./assets/Workflow.png" width="700"/>
+</p>
 ---
 
 ## 5. Example Use Case

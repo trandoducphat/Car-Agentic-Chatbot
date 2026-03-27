@@ -5,6 +5,7 @@ sys.path.append(root_dir)
 
 from app.graph.state import ChatState
 from app.embeddings.embedding_manager import EmbeddingManager
+from app.embeddings.build_vector_store import load_all_collections
 from app.retrievers.vector_store import VectorStore
 from app.retrievers.retriever import RAGRetriever
 from app.retrievers.registry import init_retrievers
@@ -16,6 +17,8 @@ def init_state() -> ChatState:
     return {"user_message": "" }
 
 def boostrap_chat_app():
+    if policy_store.collection.count() == 0 or product_store.collection.count() == 0:
+        load_all_collections()
     embedding_manager = EmbeddingManager()
     policy_store = VectorStore("policy")
     product_store = VectorStore("product")

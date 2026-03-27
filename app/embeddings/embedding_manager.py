@@ -5,7 +5,7 @@ sys.path.append(root_dir)
 
 from langchain_core.documents import Document
 from app.config.settings import DATA_DIR, EMBEDDINGS_DIR
-from app.embeddings.document_loader import JSONLoader
+from app.embeddings.document_loader import JSONLoader, load_policy_as_documents
 from typing import List, Dict, Any, Tuple
 import re
 from sentence_transformers import SentenceTransformer
@@ -19,34 +19,6 @@ PROD_DOCS = prod_loader.load()
 
 ###POL_DOCS
 policy_filepath = DATA_DIR/"raw"/"customer_policy.txt"
-def load_policy_as_documents(file_path: str) -> List[Document]:
-    """
-    Đọc file txt chính sách và trả về list[Document].
-    Mỗi điều khoản POL-XX thành 1 Document.
-    """
-    documents = []
-    with open(file_path, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    clauses = re.split(r"(POL-\d{2}:)", content)
-
-    for i in range(1, len(clauses), 2):
-        code = clauses[i].strip()   
-        text = clauses[i+1].strip()   
-        full_text = f"{code} {text}"    
-
-        documents.append(
-            Document(
-                page_content=full_text,
-                metadata={
-                    "code": code,
-                    "source": str(file_path)
-                }
-            )
-        )
-
-    return documents
-
 POL_DOCS = load_policy_as_documents(policy_filepath)
 
 
