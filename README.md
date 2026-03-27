@@ -6,52 +6,18 @@ Car Agentic Chatbot is an intelligent AI system built with an **Agentic AI archi
 
 * Car recommendations
 * Maintenance suggestions
-* Technical document retrieval
+* Polichy document retrieval
+* Car information retrieval
+* Filt cars by user's demand (price, seats, fuel type,...)
+* Compare cars's differences
 
 Unlike traditional chatbots, this system can **plan actions, call tools, and perform multi-step reasoning** to generate more accurate and context-aware responses.
 
 ---
 
-## 2. System Architecture
+## 2. Core Components
 
-### 🔷 High-level Architecture
-
-```
-        +-------------------+
-        |     User Input    |
-        +---------+---------+
-                  |
-                  v
-        +-------------------+
-        |   Agent Planner   |
-        | (LLM Reasoning)   |
-        +----+--------+-----+
-             |        |
-   +---------+        +-----------+
-   v                              v
-+--------+                 +--------------+
-|  Tool  |                 | Vector DB    |
-| Calling|                 | (RAG)        |
-+---+----+                 +------+-------+
-    |                             |
-    v                             v
-+--------+                 +--------------+
-| API /  |                 | Embeddings   |
-| Sensor |                 | Retrieval    |
-+--------+                 +--------------+
-
-                  |
-                  v
-        +-------------------+
-        |   Final Response  |
-        +-------------------+
-```
-
----
-
-## 3. Core Components
-
-### 3.1 Agent (Core Brain)
+### 2.1 Agent (Core Brain)
 
 * Powered by LLMs (Gemini / GPT / LLaMA)
 * Capabilities:
@@ -60,7 +26,7 @@ Unlike traditional chatbots, this system can **plan actions, call tools, and per
   * Multi-step planning
   * Tool selection and orchestration
 
-### 3.2 Tool System
+### 2.2 Tool System
 
 The agent interacts with external tools to extend its capabilities:
 
@@ -73,7 +39,7 @@ The agent interacts with external tools to extend its capabilities:
 
 ---
 
-### 3.3 RAG (Retrieval-Augmented Generation)
+### 2.3 RAG (Retrieval-Augmented Generation)
 
 * Uses a Vector Database to store:
 
@@ -91,7 +57,7 @@ The agent interacts with external tools to extend its capabilities:
 
 ---
 
-## 4. Agentic Workflow
+## 3. Agentic Workflow
 
 <p align="center">
   <img src="./assert/Workflow.png" width="700"/>
@@ -108,7 +74,7 @@ The agent interacts with external tools to extend its capabilities:
 
 ---
 
-## 5. Example Use Case
+## 4. Example Use Case
 
 ### Input:
 
@@ -129,7 +95,7 @@ The agent interacts with external tools to extend its capabilities:
 
 ---
 
-## 6. Technologies Used
+## 5. Technologies Used
 
 ### 🔹 AI / ML
 
@@ -154,29 +120,29 @@ The agent interacts with external tools to extend its capabilities:
 
 ---
 
-## 7. Installation & Setup
+## 6. Installation & Setup
 
-### 7.1 Clone Repository
+### 6.1 Clone Repository
 
 ```bash
 git clone <repo>
 cd car-agentic-chatbot
 ```
 
-### 7.2 Install Dependencies
+### 6.2 Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 7.3 Environment Configuration (.env)
+### 6.3 Environment Configuration (.env)
 
 ```env
 API_KEY=your_api_key
 MQTT_BROKER=your_broker
 ```
 
-### 7.4 Run the System
+### 6.4 Run the System
 
 ```bash
 uvicorn main:app --reload
@@ -184,7 +150,7 @@ uvicorn main:app --reload
 
 ---
 
-## 8. Demo
+## 7. Demo
 
 ### Use cases:
 
@@ -194,7 +160,7 @@ uvicorn main:app --reload
 
 ---
 
-## 9. Evaluation
+## 8. Evaluation
 
 Evaluation is based on real-world demo scenarios:
 
@@ -205,7 +171,7 @@ Evaluation is based on real-world demo scenarios:
 
 ---
 
-## 10. Future Work
+## 9. Future Work
 
 * Multi-agent collaboration
 * Voice assistant integration
@@ -214,7 +180,7 @@ Evaluation is based on real-world demo scenarios:
 
 ---
 
-## 11. Self-Learning Outcomes
+## 10. Self-Learning Outcomes
 
 During this project, the following skills were self-developed:
 
@@ -224,6 +190,6 @@ During this project, the following skills were self-developed:
 
 ---
 
-## 12. Conclusion
+## 11. Conclusion
 
 Car Agentic Chatbot represents a shift from traditional chatbots to **intelligent systems capable of reasoning and acting**, making it highly applicable to real-world automotive use cases.
