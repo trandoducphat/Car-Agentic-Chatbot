@@ -19,14 +19,13 @@ Unlike traditional chatbots, this system can **plan actions, call tools, and per
 
 ### 2.1 Agent (Core Brain)
 
-* Powered by LLMs (Gemini / GPT / LLaMA)
+* Powered by LLMs (Qwen3)
 * Capabilities:
 
   * Intent understanding
-  * Multi-step planning
-  * Tool selection and orchestration
+  * Generate response with knowledge
 
-### 2.2 Tool System
+### 2.2 Tool System (Not yet)
 
 The agent interacts with external tools to extend its capabilities:
 
@@ -43,18 +42,8 @@ The agent interacts with external tools to extend its capabilities:
 
 * Uses a Vector Database to store:
 
-  * Car manuals
-  * Repair guides
-  * FAQs
-
-**Flow:**
-
-1. User query
-2. Convert to embedding
-3. Retrieve relevant documents
-4. Inject into prompt
-5. Generate final answer
-
+  * Cars's information
+  * Policy documentary
 ---
 
 ## 3. Agentic Workflow
@@ -106,18 +95,12 @@ The agent interacts with external tools to extend its capabilities:
 ### 🔹 Backend
 
 * Python
-* FastAPI
+* FastAPI (Not yet)
 * LangChain / Agent frameworks
 
 ### 🔹 Data
 
 * Vector Database (FAISS / Chroma)
-
-### 🔹 IoT Integration
-
-* MQTT
-* Camera (YOLO-based detection)
-
 ---
 
 ## 6. Installation & Setup
@@ -125,8 +108,8 @@ The agent interacts with external tools to extend its capabilities:
 ### 6.1 Clone Repository
 
 ```bash
-git clone <repo>
-cd car-agentic-chatbot
+git clone https://github.com/trandoducphat/Car-Agentic-Chatbot.git
+cd Car-Agentic-Chatbot
 ```
 
 ### 6.2 Install Dependencies
@@ -135,52 +118,32 @@ cd car-agentic-chatbot
 pip install -r requirements.txt
 ```
 
-### 6.3 Environment Configuration (.env)
-
-```env
-API_KEY=your_api_key
-MQTT_BROKER=your_broker
-```
-
-### 6.4 Run the System
+### 6.3 Run the model
 
 ```bash
-uvicorn main:app --reload
+python main.py
 ```
-
 ---
 
-## 7. Demo
-
-### Use cases:
-
-* Web chat interface
-* IoT camera streaming
-* Real-time AI detection and response
-
----
-
-## 8. Evaluation
+## 7. Evaluation
 
 Evaluation is based on real-world demo scenarios:
 
-* Response accuracy
+* Response accuracy, naturally
 * Multi-step reasoning capability
 * Latency
-* IoT integration performance
 
 ---
 
-## 9. Future Work
+## 8. Future Work
 
-* Multi-agent collaboration
-* Voice assistant integration
-* Predictive maintenance
+* Agent can predict manuals
+* UI + Database system 
 * Domain-specific fine-tuning for automotive
 
 ---
 
-## 10. Self-Learning Outcomes
+## 9. Self-Learning Outcomes
 
 During this project, the following skills were self-developed:
 
@@ -190,6 +153,6 @@ During this project, the following skills were self-developed:
 
 ---
 
-## 11. Conclusion
+## 10. Conclusion
 
 Car Agentic Chatbot represents a shift from traditional chatbots to **intelligent systems capable of reasoning and acting**, making it highly applicable to real-world automotive use cases.
