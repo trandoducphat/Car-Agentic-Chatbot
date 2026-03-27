@@ -5,11 +5,47 @@
 Car Agentic Chatbot is an intelligent AI system built with an **Agentic AI architecture** to assist users in automotive-related tasks such as:
 
 * Car recommendations
-* Basic fault diagnosis
 * Maintenance suggestions
 * Technical document retrieval
 
 Unlike traditional chatbots, this system can **plan actions, call tools, and perform multi-step reasoning** to generate more accurate and context-aware responses.
+
+---
+
+## 2. System Architecture
+
+### 🔷 High-level Architecture
+
+```
+        +-------------------+
+        |     User Input    |
+        +---------+---------+
+                  |
+                  v
+        +-------------------+
+        |   Agent Planner   |
+        | (LLM Reasoning)   |
+        +----+--------+-----+
+             |        |
+   +---------+        +-----------+
+   v                              v
++--------+                 +--------------+
+|  Tool  |                 | Vector DB    |
+| Calling|                 | (RAG)        |
++---+----+                 +------+-------+
+    |                             |
+    v                             v
++--------+                 +--------------+
+| API /  |                 | Embeddings   |
+| Sensor |                 | Retrieval    |
++--------+                 +--------------+
+
+                  |
+                  v
+        +-------------------+
+        |   Final Response  |
+        +-------------------+
+```
 
 ---
 
@@ -57,8 +93,19 @@ The agent interacts with external tools to extend its capabilities:
 
 ## 4. Agentic Workflow
 
-```
-![Workflow](assets/Workflow.png)
+<p align="center">
+  <img src="./asset/Workflow.png" width="700"/>
+</p>
+
+**Workflow Explanation:**
+
+1. The user submits a query
+2. The agent detects the intent
+3. The system plans required actions
+4. It may call tools, APIs, or retrieve knowledge (RAG)
+5. Results are aggregated
+6. A final response is generated
+
 ---
 
 ## 5. Example Use Case
