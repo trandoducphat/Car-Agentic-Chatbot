@@ -58,9 +58,7 @@ The agent interacts with external tools to extend its capabilities:
 ## 4. Agentic Workflow
 
 ```
-<p align="center">
-  <img src="./assets/Workflow.png" width="700"/>
-</p>
+![Workflow](assets/Workflow.png)
 ---
 
 ## 5. Example Use Case
