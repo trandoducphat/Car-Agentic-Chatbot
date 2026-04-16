@@ -8,11 +8,8 @@ from app.intent.base import Intent
 
 RULE_PATTERNS = {
     Intent.CONFIRM_SELECTION: [
-        r"\b(chốt|lấy|mua)\b.*(xe|mẫu này)",
-        r"\btôi chốt\b",
-    ],
-    Intent.GREETING: [
-        r"\b(chào|hello|hi)\b",
+        r"\b(chốt|chọn)\b.*(xe|mẫu này)",
+        r"\b(tôi chốt|chốt mua)\b",
     ],
     Intent.COMPARE_CARS:[
         r"\b(so sánh)"

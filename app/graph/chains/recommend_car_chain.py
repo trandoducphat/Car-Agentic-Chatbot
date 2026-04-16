@@ -250,7 +250,9 @@ def build_recommendation_info(state: ChatState) -> ChatState:
         state.selected_car = [prod_doc for prod_doc in PROD_DOCS if prod_doc.metadata["model"]==filted_car[0]["model"]][0]
     elif len(filted_car) == 2:
         state.compared_car = [prod_doc for prod_doc in PROD_DOCS if prod_doc.metadata["model"] in [car["model"] for car in filted_car]]
-    
+    elif len(filted_car) >= 3:
+        state.compared_car = [prod_doc for prod_doc in PROD_DOCS if prod_doc.metadata["model"] in [car["model"] for car in filted_car[:3]]]
+
     state.response = answer
     return state
 

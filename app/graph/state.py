@@ -5,6 +5,7 @@ sys.path.append(root_dir)
 
 from app.intent.base import Intent
 from dataclasses import dataclass, field
+from langchain_core.documents.base import Document
 
 @dataclass
 class ChatState:
@@ -14,10 +15,12 @@ class ChatState:
 
     history: list[str] = field(default_factory=list)
 
-    selected_car: dict = field(default_factory=dict)
-    compared_car: list[dict] = field(default_factory=list)
+    selected_car: Document | None = None
+
+    compared_car: list[Document] = field(default_factory=list)
 
     retrieved_docs: list[dict] = field(default_factory=list)
+
     policy_context: str = ""
 
     response: str = ""

@@ -45,11 +45,13 @@ def test2():
     print("------Testing Embeddings and Vector Store------")
     pol_retriever =  get_policy_retriever()
     prod_retriever = get_product_retriever()
-    print(pol_retriever.retrieve("chính sách đổi trả", 1))
+    print(pol_retriever.retrieve("tôi đang thắc mắc về chính sách đổi trả của công ty bên mình", 1))
+    print("------")
+    print(pol_retriever.retrieve("vậy còn về chính sách bảo hành thì sao", 1))
     print("------")
     print(prod_retriever.retrieve("tôi đang thắc mắc về số chỗ ngồi của xe Toyota Vios", 1, 0.0))
     print("------")
-    print(prod_retriever.retrieve("xe, chỗ ngồi, động cơ MG dòng ZS", 1, 0.0))
+    print(prod_retriever.retrieve("so sánh giữa xe Xe có giá 1,999 tỷ đồng, phù hợp cho gia đình cần SUV châu Âu cỡ trung với xe Xe có giá 4,5 tỷ đồng, phù hợp cho người dùng cần SUV cỡ lớn sử dụng đa địa hình", 2, 0.0))
 
 
 def test3():
@@ -109,8 +111,8 @@ def test7():
 if __name__ == "__main__":
     main()
     # test1()
-    # test2()
-    test3()
+    test2()
+    # test3()
     # test4()
     # test5()
     # test6()

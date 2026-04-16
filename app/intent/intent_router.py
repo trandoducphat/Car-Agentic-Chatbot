@@ -11,20 +11,24 @@ from app.graph.state import ChatState
 from app.embeddings.embedding_manager import PROD_IDX
 
 def dectect_intent(state: ChatState) -> ChatState:
-    rule_intent = detect_rule_intent(state.user_message)
-    if rule_intent:
-        state.intent = rule_intent
-        return state
+    # rule_intent = detect_rule_intent(state.user_message)
+    # if rule_intent:
+    #     state.intent = rule_intent
+    #     return state
 
     intent_and_product_response = intent_and_product_detector(state.user_message)
     state.intent = Intent(intent_and_product_response["intent"])
-    suitable_prods = [(PROD_IDX.get(p) if PROD_IDX.get(p) is not None else None) for p in intent_and_product_response["product"]]
+    suitable_prods = []
+    for i in intent_and_product_response["product"]:
+        for name, doc in PROD_IDX.items():
+            if i.lower() in name.lower():
+                suitable_prods.append(doc)
+                break
 
-    if len(suitable_prods) == 0:
+    if not suitable_prods:
         return state
-    elif len(suitable_prods) == 1:
+    if len(suitable_prods) == 1:
         state.selected_car = suitable_prods[0]
-        return state
     else:
         state.compared_car = suitable_prods
-        return state
+    return state

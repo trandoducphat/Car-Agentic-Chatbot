@@ -14,7 +14,6 @@ def init_retrievers(policy_retriever: RAGRetriever, product_retriever: RAGRetrie
     _product_retriever = product_retriever
     _policy_retriever = policy_retriever
 
-
 def get_policy_retriever() -> RAGRetriever:
     if _policy_retriever is None:
         raise RuntimeError("Policy retriever not initialized")

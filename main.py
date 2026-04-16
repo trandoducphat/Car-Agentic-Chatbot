@@ -13,6 +13,7 @@ def main():
     boostrap_chat_app()
     graph = build_graph()
     print("=== CHATBOT STARTED ===")
+    print("Gõ 'history' để xem lại lịch sử cuộc trò chuyện")
     print("Gõ 'new chat' để tạo cuộc trò chuyện mới")
     print("Gõ 'exit' để thoát")
     print("Gõ 'reset' khởi tạo lại cuộc trò chuyện này")
@@ -35,7 +36,17 @@ def main():
             state = sessions.reset(state_id)
             print("===Cuộc trò chuyện đã được khởi tạo lại===")
             continue
-        
+
+        elif user_input == "exit":
+            break
+
+        elif user_input == "history":
+            print("===Lịch sử cuộc trò chuyện===")
+            for t in state['history']:
+                print(t)
+            print("=============================")
+            continue
+            
         else: 
             state['user_message'] = user_input
 

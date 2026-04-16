@@ -63,6 +63,7 @@ class VectorStore:
                 metadatas = metadatas,
                 documents = documents_text
             )
+            self.client.persist()
             print(f"Successfully added {len(documents)} documents to the vector's storage")
             print(f"Total documents in collection: {self.collection.count()}")
         except Exception as e:

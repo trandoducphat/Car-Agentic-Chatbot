@@ -31,12 +31,9 @@ POLICY_ANSWER_PROMPT="""
     {user_message}
     
     Instructions:
-    - Use only the information explicitly stated in the context.
-    - Do NOT infer, assume, or add new information.
-    - If the answer cannot be fully answered from the context, say exactly: "I do not know."
-    - End your answer with: <END>
-    - Do not write anything after <END>.
-    
+    - Use the information explicitly stated in the context.
+    - Reply as natural as possible, be willing but don't say hello at first.
+    - You can also list the main condition of the policy if in need.
     Answer in Vietnamese.
     """
 
@@ -55,8 +52,8 @@ INTENT LIST (choose exactly ONE):
 - GREETING
 - ASK_RECOMMENDATION
 - ASK_CAR_INFO
-- FILTER_BY_PRICE
-- FILTER_BY_BRAND
+- FILTER_BY_PRICE (if the query just mentioned about price without any different demands)
+- FILTER_BY_BRAND (if the query just mentioned about brand without any different demands)
 - COMPARE_CARS
 - CONFIRM_SELECTION
 - ASK_POLICY
